@@ -1,0 +1,20 @@
+name: cache npmm
+on:
+  push: {}
+jobs:
+  workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+
+      - name: Cache Yarn and node-modules
+        uses: auguwu/node-pm-cache@master
+        with:
+          node-modules: ./node_modules
+          package-manager: pnpm # Leave this out to let the action to detect it.
