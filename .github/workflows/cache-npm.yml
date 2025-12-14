@@ -17,4 +17,4 @@ jobs:
         uses: auguwu/node-pm-cache@master
         with:
           node-modules: ./node_modules
-          package-manager: pnpm # Leave this out to let the action to detect it.
+         # package-manager: pnpm # Leave this out to let the action to detect it.
